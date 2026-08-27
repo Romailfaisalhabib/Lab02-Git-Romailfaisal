@@ -17,8 +17,8 @@ main:
     li x22, 0
     for_loop2:
         li x6, 0x200 #--> loading address in register
-        add x6, x6, x22 #--> a[i] = incrementing index to store correct index value into memory
-        lb x18, 0(x6) #--> getting value from memory and storing in x18 register
+        add x6, x6, x22 #--> [i] = incrementing index to store correct index value into memory
+        lb x18, 0(x6) #--> getting value from memory and storing in x18 register --> x18 = a[i]
         addi x22, x22, 1 #--> incrementing i = i + 1
         add x23, x23, x18 #--> adding to sum --> sum = sum + a[i]
         beq x22, x19, exit_for_loop2 #--> end condition
