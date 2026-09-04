@@ -1,11 +1,10 @@
 .text
 .globl main
 main:
-    # x21 = a
-    li x20, 1                # --> x
+    li x20, 4                # --> x
     li x22, 2                # --> b
     li x23, 3                # --> c
-    li x24, 2                # --> 2 for the divide in 
+    li x24, 2                # --> 2 for the divide and mutilply 
     
     # --- Diff cases ---
 
