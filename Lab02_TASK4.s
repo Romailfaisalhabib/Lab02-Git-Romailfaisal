@@ -7,10 +7,14 @@ main:
 
     first_loop:
         li x29, 0                   # x29 = j = 0
-        li x10, 0                   # --> temp value for address storing
-        li x16, 4                   # --> to use for D[4*j]
+        li x10, 0x200                   # --> temp value for address storing
+        li x16, 0                   # --> to use for D[4*j]
+        li x1, 1
         second_loop:
-            mul x10, x16, x29           #--> 4*j
+            li x10, 0x200
+            li x16, 0  
+            slli x16, x29, 4            #--> 4*j
+            add x10, x10, x16
             add x18, x7, x29            #--> x18 = i + j 
             sw x18, 0(x10)              #--> Storing i + j at D[4*j]
             addi x29, x29, 1            #--> Incrementing j = j + 1
